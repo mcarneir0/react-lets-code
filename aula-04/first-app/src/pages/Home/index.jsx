@@ -1,13 +1,18 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+
+import CountProvider from '../../contexts/Count'
+
 import { Count } from '../../components/Count'
+import { MostrarCount } from '../../components/Count/mostrarCount'
 
 const Home = () => {
+  return <CountProvider>
+    <Count/>
 
-  return <>
-    <Link to="/app">Go app</Link>
-    <Count />
-  </>
+    <hr />
+
+    <MostrarCount/>
+  </CountProvider>
 }
 
 export { Home }

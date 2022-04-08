@@ -1,17 +1,11 @@
-import React, { useState, useEffect } from "react"
+import React from 'react'
+import { useCount } from '../../contexts/Count'
 
 export const Count = () => {
+  const [count, setCount] = useCount()
 
-    //  useState é usado para atualizar o DOM
-    const [count, setCount] = useState(0);
-
-    //  useEffect executa uma função quando uma ou mais variáveis forem alteradas
-    useEffect(() => {
-        console.log(count)
-    }, [count]);
-
-    return <>
-        <h1>Contador: {count}</h1>
-        <button onClick={() => setCount(count + 1)}>Clique</button>
-    </>
+  return <>
+    <h1>Contador: {count}</h1>
+    <button onClick={() => setCount(count + 1)}>Me click</button>
+  </>
 }
